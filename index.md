@@ -6,7 +6,7 @@ categories: jekyll update
 author: "Avishek Sarkar"
 permalink: /OR-tools/
 description: 
-imageUrl: 
+imageUrl: https://pbs.twimg.com/media/DuoN35ZXgAAKzC_.jpg
 ---
 
 <br>
