@@ -28,34 +28,8 @@ Now, let's begin 👍
 
 <b>Optimization</b>, essentially, means finding the best solution to a problem out of a large set of possible solutions. We all have finite resources and time & we want to make most of them. Either it is the task of scheduling the order at which you will answer the emails or switching to a new route back home to minimize traffic woes, we surely know how important optimization is to data science. One of the main concerns of a data scientist is creating a model that fits the problem like finding optimal heuristics, minimum function losses, etc. Therefore it is crucial to understand optimization frameworks.
 
-Here in this article, we will focus on understanding how to use OR-tools for linear and constraint optimization.
+Here in this article, we will focus on understanding how to use OR-tools for  constraint optimization.
 
-## Linear Optimization
-
-Linear optimization (or linear programming) is the name given to computing the best solution to a problem modeled as a set of linear relationships. These problems arise in many scientific and engineering disciplines. (The word "programming" is a bit of a misnomer, similar to how "computer" once meant "a person who computes." Here, "programming" refers to the arrangement of a plan, rather than programming in a computer language.)
-
-A real-world example can be the problem faced with FedEx delivery. The delivery person will calculate different routes for going to all the 6 destinations and then come up with the shortest route.
-
-<center><img src='https://miro.medium.com/max/1200/0*B14K-J7q9HcVF_o3'></center>
-
-
-The primary OR-Tools linear optimization solver is <b>Glop</b>, Google’s linear programming system. It’s fast, memory efficient, and numerically stable. To learn how to use Glop to solve a simple linear problem in all of the supported languages, see <a href='https://developers.google.com/optimization/lp/glop'>GLOP solver</a>
-
-#### Using Glop in Python
-To use Glop in Python:
-
-Declare the solver using the Python wrapper pywraplp.
-```python
-from ortools.linear_solver import pywraplp
-def main():
-  # Instantiate a Glop solver, naming it LinearExample.
-  solver = pywraplp.Solver('LinearExample',
-                           pywraplp.Solver.GLOP_LINEAR_PROGRAMMING)
-```
-Call the solver
-```python
-solver.Solve()
-```
 
 ## Constraint Optimization
 <b>Constraint optimization</b> or constraint programming (CP), is the name given to identifying feasible solutions out of a very large set of candidates, where the problem can be modeled in terms of arbitrary constraints. 
