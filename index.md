@@ -21,7 +21,7 @@ The fastest way to get OR-Tools is to install the Python binary version. If you 
 ```bash
    python -m pip install --upgrade --user ortools
 ```
-For more please check out <a href='https://developers.google.com/optimization/install'>Source Installation Instruction</a>
+For more please check out <a href='https://developers.google.com/optimization/install' target="_blank">Source Installation Instruction</a>
 
 Now, let's begin 👍
 
@@ -58,7 +58,7 @@ This happens to be a perfect use case of OR-tools Constraint Optimization Solver
 
 The CP-SAT solver is technologically superior to the original CP solver and should be preferred in almost all situations. The exceptions are small problems for which solutions can be found quickly using either solver. In those cases you may find that the original CP solver outperforms CP-SAT.
 
-Check out the <a href='https://developers.google.com/optimization/scheduling/employee_scheduling'>Nurse Scheduling Problem</a> to get a rudimentary understanding of employee scheduling and CP-SAT.
+Check out the <a href='https://developers.google.com/optimization/scheduling/employee_scheduling' target="_blank">Nurse Scheduling Problem</a> to get a rudimentary understanding of employee scheduling and CP-SAT.
 
 Now you have some idea of the (N, D, S) problem. Now let's try to create our own constraint using OR-Tools
 
@@ -101,4 +101,4 @@ This mathematical equation, when written programmatically in python, is somethin
 ```
 Congrats you successfully created your first OR-Tools Constraint ! 👏
 
-Using OR-Tools we were able to programmatically codify all the above mentioned constraints to create a Roster Automation Service .  This not only helps us generate rosters for upcoming weeks but also can be used as a simulation tool to evalute historical rosters that were created manually .
+Using OR-Tools we were able to programmatically codify all the above mentioned constraints to create a <b>Roster Automation Service</b> .  This not only helps us generate rosters for upcoming weeks but also can be used as a simulation tool to evalute historical rosters that were created manually .
