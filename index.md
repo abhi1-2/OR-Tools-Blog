@@ -40,9 +40,9 @@ The most popular problem in constraint optimization is  <b>Employee Scheduling</
 <center><img src='https://46nuwl3acn7q25gnmb32k5qh-wpengine.netdna-ssl.com/wp-content/uploads/2018/01/memebetter.com-20180122190930.jpg' height=500></img></center>
 
 
-Like Morpheus in Matrix was in pursuit of the <b>One</b> (Neo) his whole life, we at BOX8 too are in continuous pursuit to deliver orders quickly and efficiently to our customers. To do so we have an army of delivery boys, 
+Like Morpheus (from The Matrix) was in pursuit of the <b>One</b> (Neo) his whole life, we at BOX8 too are in continuous pursuit to deliver orders quickly and efficiently to our customers. To do so we have an army of delivery boys, 
 but now the question is how to distribute them in all our outlets? 
-also, how do we distribute them throughout the day? 
+Also, how do we distribute them throughout the day? 
 
 To understand the complexity of the whole problem let's list what we would like to achieve:
 
@@ -79,8 +79,9 @@ def shift_constraint():
             for s in all_shifts:
                     model.Add(sum(shifts[(n, d, s)] for n in all_employees) > 1)
 
-solver = model.CpSolver()
-#process solver
+solver = cp_model.CpSolver()
+status = solver.solve(model)
+#process data based on status
 ```
 Before we design a constraint we need an OR-Tools variable to operate on.
 In the first block of the code we are defining an OR-Tools Boolvar shifts[(n,d,s)] where:
