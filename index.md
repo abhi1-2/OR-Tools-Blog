@@ -1,13 +1,4 @@
----
-layout: post
-title:  "OR-tools"
-date:   
-categories: jekyll update
-author: "Avishek Sarkar"
-permalink: /OR-tools/
-description: 
-imageUrl: https://pbs.twimg.com/media/DuoN35ZXgAAKzC_.jpg
----
+
 
 <br>
 <center><img src='https://pbs.twimg.com/media/DuoN35ZXgAAKzC_.jpg' width='80%'></center>
