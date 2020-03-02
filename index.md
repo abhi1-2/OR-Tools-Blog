@@ -1,7 +1,6 @@
 
 
-<br>
-<center><img src='https://pbs.twimg.com/media/DuoN35ZXgAAKzC_.jpg' width='80%'></center>
+# Contraint Optimization with Google OR-Tools
 
 Google Optimization Tools (a.k.a., OR-Tools) is an open-source, fast and portable software suite for solving combinatorial optimization problems. Google OR tools are essentially one of the most powerful tools introduced in the world of problem-solving.
 
@@ -64,18 +63,24 @@ Check out the <a href='https://developers.google.com/optimization/scheduling/emp
 Now you have some idea of the (N, D, S) problem. Now let's try to create our own constraint using OR-Tools
 
 ```python
-self.model = cp_model.CpModel()
-    for n in self.all_employees:
-        for d in self.all_days:
-            for s in self.all_shifts:
-                self.shifts[(n, d,
-                        s)] = self.model.NewBoolVar('shift_n%id%is%i' % (n, d, s))
+from ortools.sat.python import cp_model
+#define variables here like all_employees, all_days etc.
 
-def shift_constraint(self):
+model = cp_model.CpModel()
+for n in all_employees:
+    for d in all_days:
+        for s in all_shifts:
+            shifts[(n, d,
+                    s)] = self.model.NewBoolVar('shift_n%id%is%i' % (n, d, s))
+
+def shift_constraint():
         #more than one employee on a particular day and a particular shift
-        for d in self.all_days:
-            for s in self.all_shifts:
-                    self.model.Add(sum(self.shifts[(n, d, s)] for n in self.all_employees) > 1)
+        for d in all_days:
+            for s in all_shifts:
+                    model.Add(sum(shifts[(n, d, s)] for n in all_employees) > 1)
+
+solver = model.CpSolver()
+#process solver
 ```
 Before we design a constraint we need an OR-Tools variable to operate on.
 In the first block of the code we are defining an OR-Tools Boolvar shifts[(n,d,s)] where:
@@ -92,7 +97,7 @@ In the second block, we are designing a basic shift constraint which states that
 
 This mathematical equation, when written programmatically in python, is something like - 
 ```python
-    sum(self.shifts[(n, d, s)] for n in self.all_employees) > 1
+    sum(shifts[(n, d, s)] for n in all_employees) > 1
 ```
 Congrats you successfully created your first OR-Tools Constraint ! 👏
 
