@@ -7,12 +7,12 @@ Google Optimization Tools (a.k.a., OR-Tools) is an open-source, fast and portabl
 
 The suite contains:
 
-   1. A Linear Programming solver
-   2. A Constraint Programming Solver
-   3. Wrappers around commercial and other open-source solvers, including mixed-integer solvers
-   4. Bin Packing and Knapsack Algorithms
-   5. Algorithms for the Traveling Salesman Problem and Vehicle Routing Problem
-   6. Graph algorithms (shortest paths, min-cost flow, max flow, linear sum assignment).
+   1.   A Linear Programming solver
+   2.   A Constraint Programming Solver
+   3.   Wrappers around commercial and other open-source solvers, including mixed-integer solvers
+   4.   Bin Packing and Knapsack Algorithms
+   5.   Algorithms for the Traveling Salesman Problem and Vehicle Routing Problem
+   6.   Graph algorithms (shortest paths, min-cost flow, max flow, linear sum assignment).
 
 ## Installation
 
@@ -67,11 +67,11 @@ The most popular problem in constraint optimization is  <b>Employee Scheduling</
 <center><img src='https://46nuwl3acn7q25gnmb32k5qh-wpengine.netdna-ssl.com/wp-content/uploads/2018/01/memebetter.com-20180122190930.jpg' height=500></img></center>
 
 
-Like Morpheus in Matrix was in pursuit of the <b>One</b> (Nemo) his whole life, we at BOX8 too are in continuous pursuit to deliver orders quickly and efficiently to our customers. To do so we have an army of delivery boys, 
+Like Morpheus in Matrix was in pursuit of the <b>One</b> (Neo) his whole life, we at BOX8 too are in continuous pursuit to deliver orders quickly and efficiently to our customers. To do so we have an army of delivery boys, 
 but now the question is how to distribute them in all our outlets? 
 also, how do we distribute them throughout the day? 
 
-To understand the complexity of the whole problem lets list what we would like to achieve:
+To understand the complexity of the whole problem let's list what we would like to achieve:
 
 1. More Delivery Boys during Peak Hours (if possible more skilled ones).
 2. Sufficient Breaks between continuous shifts.
@@ -79,7 +79,9 @@ To understand the complexity of the whole problem lets list what we would like t
 4. Identifying which outlets need more Delivery Boys and which ones could do with less.
 5. The minimum number of Delivery Boys to be always present in the outlet.
 
-The above mentioned are just a few constraints we would like to put during roster generation, but doing so manually for the 100s of Delivery Boys in over 140+ outlets is pretty much impossible. This happens to be a perfect use case of OR-tools Constraint Optimization Solver <b>CP-SAT</b>.
+The above mentioned are just a few constraints we would like to put during roster generation, but doing so manually for the hundreds of Delivery Boys in over 140+ outlets is pretty much impossible.
+<center><img src='https://drive.google.com/uc?export=view&id=1sa5BJXk57UMSDoCYztPIZfDDACLYwx1M' height='50%'></center>
+This happens to be a perfect use case of OR-tools Constraint Optimization Solver <b>CP-SAT</b>.
 
 Check out the <a href='https://developers.google.com/optimization/scheduling/employee_scheduling'>Nurse Scheduling Problem</a> to get a rudimentary understanding of employee scheduling and CP-SAT.
 
@@ -102,11 +104,11 @@ def shift_constraint(self):
 Before we design a constraint we need an OR-Tools variable to operate on.
 In the first block of the code we are defining an OR-Tools Boolvar shifts[(n,d,s)] where:
 
-1. n -> employee number(0...N)
-2. d -> days number(0...D)
-3. s -> shift number(0...S)
+1. n -> employee index(0...N)
+2. d -> days index(0...D)
+3. s -> shift index(0...S)
 
-For example: Lets say we want employee 1 on day 1 to do shift 2 => shift[(0,0,1)] = 1
+For example: Let's say we want employee 1 on day 1 to do shift 2 => shift[(0,0,1)] = 1
 
 In the second block, we are designing a basic shift constraint which states that for each shift in a particular day there should be more than 1 employee(Delivery Boy). So the mathematical equation for that will be:
 
