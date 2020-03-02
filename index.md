@@ -83,7 +83,7 @@ The above mentioned are just a few constraints we would like to put during roste
 
 Check out the <a href='https://developers.google.com/optimization/scheduling/employee_scheduling'>Nurse Scheduling Problem</a> to get a rudimentary understanding of employee scheduling and CP-SAT.
 
-Now you have some idea of (N, D, S) problem. Now let's try to create our own constraint using OR-Tools
+Now you have some idea of the (N, D, S) problem. Now let's try to create our own constraint using OR-Tools
 
 ```python
 self.model = cp_model.CpModel()
@@ -108,7 +108,7 @@ In the first block of the code we are defining an OR-Tools Boolvar shifts[(n,d,s
 
 For example: Lets say we want employee 1 on day 1 to do shift 2 => shift[(0,0,1)] = 1
 
-In the second block, we are designing a basic shift constraint which states that for each shift there should be more than 1 employee(Delivery Boy). So the mathematical equation for that will be:
+In the second block, we are designing a basic shift constraint which states that for each shift in a particular day there should be more than 1 employee(Delivery Boy). So the mathematical equation for that will be:
 
 <center><img src='https://drive.google.com/uc?export=view&id=1B_pTvo3cXg0Xd3MrF0wnrXXYDtf3FyLC' width='60%'></center>
 
@@ -117,3 +117,5 @@ This mathematical equation, when written programmatically in python, is somethin
     sum(self.shifts[(n, d, s)] for n in self.all_employees) > 1
 ```
 Congrats you successfully created your first OR-Tools Constraint ! 👏
+
+Using OR-Tools we were able to programmatically codify all the above mentioned constraints to create a Roster Automation Service .  This not only helps us generate rosters for upcoming weeks but also can be used as a simulation tool to evalute historical rosters that were created manually .
