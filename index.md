@@ -9,10 +9,10 @@ The suite contains:
 
    1. A Linear Programming solver
    2. A Constraint Programming Solver
-   3. Wrappers around commercial and other open source solvers, including mixed integer solvers
+   3. Wrappers around commercial and other open-source solvers, including mixed-integer solvers
    4. Bin Packing and Knapsack Algorithms
    5. Algorithms for the Traveling Salesman Problem and Vehicle Routing Problem
-   6. Graph algorithms (shortest paths, min cost flow, max flow, linear sum assignment).
+   6. Graph algorithms (shortest paths, min-cost flow, max flow, linear sum assignment).
 
 ## Installation
 
@@ -24,11 +24,11 @@ The fastest way to get OR-Tools is to install the Python binary version. If you 
 ```
 For more please check out <a href='https://developers.google.com/optimization/install'>Source Installation Instruction</a>
 
-Now, lets begin 👍
+Now, let's begin 👍
 
 <b>Optimization</b>, essentially, means finding the best solution to a problem out of a large set of possible solutions. We all have finite resources and time & we want to make most of them. Either it is the task of scheduling the order at which you will answer the emails or switching to a new route back home to minimize traffic woes, we surely know how important optimization is to data science. One of the main concerns of a data scientist is creating a model that fits the problem like finding optimal heuristics, minimum function losses, etc. Therefore it is crucial to understand optimization frameworks.
 
-Here in this article we will focus on understanding how to use OR-tools for linear and constraint optimization.
+Here in this article, we will focus on understanding how to use OR-tools for linear and constraint optimization.
 
 ## Linear Optimization
 
@@ -60,30 +60,30 @@ solver.Solve()
 ## Constraint Optimization
 <b>Constraint optimization</b> or constraint programming (CP), is the name given to identifying feasible solutions out of a very large set of candidates, where the problem can be modeled in terms of arbitrary constraints. 
 
-CP is based on feasibility (finding a feasible solution) rather than optimization (finding an optimal solution) and focuses on the constraints and variables rather than the objective function. In fact, a CP problem may not even have an objective function — the goal may simply be to narrow down a vary large set of possible solutions to a more manageable subset by adding constraints to the problem.
+CP is based on feasibility (finding a feasible solution) rather than optimization (finding an optimal solution) and focuses on the constraints and variables rather than the objective function. In fact, a CP problem may not even have an objective function — the goal may simply be to narrow down a very large set of possible solutions to a more manageable subset by adding constraints to the problem.
 
 The most popular problem in constraint optimization is  <b>Employee Scheduling</b> and also happens to be our use case.
 
 <center><img src='https://46nuwl3acn7q25gnmb32k5qh-wpengine.netdna-ssl.com/wp-content/uploads/2018/01/memebetter.com-20180122190930.jpg' height=500></img></center>
 
 
-Like Morpheus in Matrix was in persuit of the <b>One</b> (Nemo) his whole life , we at BOX8 too are in continious persuit to deliver orders quickly and efficiently to our customers. To do so we have an army of delivery boys , 
-but now the question is how to distribute them in all our outlets ? 
-also how do we distribute them throught the day? 
+Like Morpheus in Matrix was in pursuit of the <b>One</b> (Nemo) his whole life, we at BOX8 too are in continuous pursuit to deliver orders quickly and efficiently to our customers. To do so we have an army of delivery boys, 
+but now the question is how to distribute them in all our outlets? 
+also, how do we distribute them throughout the day? 
 
 To understand the complexity of the whole problem lets list what we would like to achieve:
 
 1. More Delivery Boys during Peak Hours (if possible more skilled ones).
-2. Sufficient Breaks between continious shifts.
-3. More shifts to skilled Deilvery Boys 
+2. Sufficient Breaks between continuous shifts.
+3. More shifts to skilled Delivery Boys 
 4. Identifying which outlets need more Delivery Boys and which ones could do with less.
-5. Minimum number of Delivery Boys to be always present in the outlet.
+5. The minimum number of Delivery Boys to be always present in the outlet.
 
-The above mentioned are just a few constraints we would like to put during roster generation, but doing so manually for the 100s of Delivery Boys in over 140+ outlets is pretty much impossible. This happens to be a perfect use case of OR-tools Constraint Optimzation Solver <b>CP-SAT</b>.
+The above mentioned are just a few constraints we would like to put during roster generation, but doing so manually for the 100s of Delivery Boys in over 140+ outlets is pretty much impossible. This happens to be a perfect use case of OR-tools Constraint Optimization Solver <b>CP-SAT</b>.
 
 Check out the <a href='https://developers.google.com/optimization/scheduling/employee_scheduling'>Nurse Scheduling Problem</a> to get a rudimentary understanding of employee scheduling and CP-SAT.
 
-Now you have some idea of (N,D,S) problem . Now lets try to create our own constraint using OR-Tools
+Now you have some idea of (N, D, S) problem. Now let's try to create our own constraint using OR-Tools
 
 ```python
 self.model = cp_model.CpModel()
@@ -108,11 +108,11 @@ In the first block of the code we are defining an OR-Tools Boolvar shifts[(n,d,s
 
 For example: Lets say we want employee 1 on day 1 to do shift 2 => shift[(0,0,1)] = 1
 
-In the second block we are designing a basic shift constraint which states that for each shift there should be more than 1 employee(Delivery Boy).So the mathematical equation for that will be:
+In the second block, we are designing a basic shift constraint which states that for each shift there should be more than 1 employee(Delivery Boy). So the mathematical equation for that will be:
 
 <center><img src='https://drive.google.com/uc?export=view&id=1B_pTvo3cXg0Xd3MrF0wnrXXYDtf3FyLC' width='60%'></center>
 
-This mathematical equation when written programtically in python is something like - 
+This mathematical equation, when written programmatically in python, is something like - 
 ```python
     sum(self.shifts[(n, d, s)] for n in self.all_employees) > 1
 ```
