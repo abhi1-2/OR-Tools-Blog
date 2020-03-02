@@ -7,8 +7,8 @@ Google Optimization Tools (a.k.a., OR-Tools) is an open-source, fast and portabl
 
 The suite contains:
 
-   1.   A Linear Programming solver
-   2.   A Constraint Programming Solver
+   1.   A Linear Programming solver (GLOP)
+   2.   A Constraint Programming Solver (CP-SAT)
    3.   Wrappers around commercial and other open-source solvers, including mixed-integer solvers
    4.   Bin Packing and Knapsack Algorithms
    5.   Algorithms for the Traveling Salesman Problem and Vehicle Routing Problem
@@ -28,7 +28,7 @@ Now, let's begin 👍
 
 <b>Optimization</b>, essentially, means finding the best solution to a problem out of a large set of possible solutions. We all have finite resources and time & we want to make most of them. Either it is the task of scheduling the order at which you will answer the emails or switching to a new route back home to minimize traffic woes, we surely know how important optimization is to data science. One of the main concerns of a data scientist is creating a model that fits the problem like finding optimal heuristics, minimum function losses, etc. Therefore it is crucial to understand optimization frameworks.
 
-Here in this article, we will focus on understanding how to use OR-tools for  constraint optimization.
+Here in this article, we will focus on understanding how to use OR-tools for  <b>Constraint Optimization</b>.
 
 
 ## Constraint Optimization
@@ -56,6 +56,8 @@ To understand the complexity of the whole problem let's list what we would like 
 The above mentioned are just a few constraints we would like to put during roster generation, but doing so manually for the hundreds of Delivery Boys in over 140+ outlets is pretty much impossible.
 <center><img src='https://drive.google.com/uc?export=view&id=1sa5BJXk57UMSDoCYztPIZfDDACLYwx1M' height='50%'></center>
 This happens to be a perfect use case of OR-tools Constraint Optimization Solver <b>CP-SAT</b>.
+
+The CP-SAT solver is technologically superior to the original CP solver and should be preferred in almost all situations. The exceptions are small problems for which solutions can be found quickly using either solver. In those cases you may find that the original CP solver outperforms CP-SAT.
 
 Check out the <a href='https://developers.google.com/optimization/scheduling/employee_scheduling'>Nurse Scheduling Problem</a> to get a rudimentary understanding of employee scheduling and CP-SAT.
 
