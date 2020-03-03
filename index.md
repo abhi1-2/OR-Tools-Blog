@@ -2,9 +2,9 @@
 
 # CONSTRAINT OPTIMIZATION with Google OR-Tools
 
-Many engineering design and decision making problems have an objective of optimizing a function and simultaneously have a requirement for satisfying some constraints arising due to space, strength, or stability considerations. So, Constrained optimization refers to the process of optimizing an objective function with respect to some variables in the presence of constraint of those variables.
+Many engineering design and decision making problems have an objective of optimizing a function and simultaneously have a requirement for satisfying some constraints arising due to space, strength, or stability considerations. 
 
-In this article we will dive into the world of constrained optimization with state of the art constraint optimization tool introduced by Google : <b>OR-Tools</b>.
+In this article we will dive into the world of constraint optimization with state of the art constraint optimization tool introduced by Google : <b>OR-Tools</b>.
 
 Google Optimization Tools (a.k.a., OR-Tools) is an open-source, fast and portable software suite for solving combinatorial optimization problems. Google OR tools are essentially one of the most powerful tools introduced in the world of problem-solving.
 
