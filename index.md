@@ -114,7 +114,7 @@ Now What if you want the best solution from this huge solution space. Worry not 
 # skilled_employees = array of indexes of higher skilled employees
 def objective_function():       
     obj_func = []
-    
+
     #more shifts to more skilled employees
     for n in skilled_employees:
         for d in all_days:
@@ -123,8 +123,8 @@ def objective_function():
 ```
 In the above code we define an objective function whose task is to get that solution from the solution set in which the skillled employees get maximum number of shifts . To do so we design a function that maximizes the sum of shifts for all the skilled employees. 
 
-Run the code again and Et Voila! you get the best solution 😀.
+Run the code again and Et Voila! You get the best solution 😀.
 
-Using OR-Tools we were able to programmatically codify all the previously mentioned constraints to create a <b>Roster Automation Service</b> .  This not only helps us generate rosters for upcoming weeks but also can be used as a simulation tool to evalute historical rosters that were created manually .
+Using OR-Tools we were able to programmatically codify all the previously mentioned constraints to create a <b>Roster Automation Service</b> . This not only helps us generate rosters for upcoming weeks but also can be used as a simulation tool to evalute historical rosters that were created manually .
 
 Now you guys are ready to take Optimization to a whole new level ! Please share if you enjoyed the article🙂
