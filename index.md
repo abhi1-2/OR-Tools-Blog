@@ -1,6 +1,6 @@
 
 
-# CONSTRAINT OPTIMIZATION with Google OR-Tools
+# CONSTRAINED OPTIMIZATION with Google OR-Tools
 
 Many engineering design and decision making problems have an objective of optimizing a function and simultaneously have a requirement for satisfying some constraints arising due to space, strength, or stability considerations. So, Constrained optimization refers to the process of optimizing an objective function with respect to some variables in the presence of constraint of those variables.
 
